@@ -1,5 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const licenseBadge = require('./licenseBadge');
 
 function generateMarkdown(data){
     `
@@ -51,3 +52,50 @@ ${data.test}
     `;
 }
 
+inquirer.prompt([
+    {
+        type:'input',
+        name:'title',
+        message:'What is the Title of the Project?',
+    },
+    {
+        type:'input',
+        name:'description',
+        message:'What is the Description of the Project?',
+    },
+    {
+        type:'input',
+        name:'installation',
+        message:'How is the Installation',
+    },
+    {
+        type:'input',
+        name:'usage',
+        message:'What is the Usage of the Project?',
+    },
+    {
+        type:'input',
+        name:'image',
+        message:'Add an image?',
+    },
+    {
+        type:'input',
+        name:'credits',
+        message:'What are the Credits of the Project?',
+    },
+    {
+        type:'input',
+        name:'contribute',
+        message:'Any Contributors?',
+    },
+    {
+        type:'input',
+        name:'test',
+        message:'Any Tests?',
+    },
+]) 
+.then((data)=>{
+    const createReadme = generateMarkdown(data);
+
+    fs.writeFile('README.md', createReadme, (err) => err ? console.error(err) : console.log('Successfully created README.md file!'))
+});
