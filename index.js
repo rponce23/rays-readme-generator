@@ -1,9 +1,9 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const licenseBadge = require('./licenseBadge');
+const licenseBadge = require('./licenseBadge')
 
 function generateMarkdown(data){
-    `
+   return `
 # ${data.title}
 
 ## Description
@@ -30,7 +30,9 @@ ${data.usage}
 
 ## Images
 
-![Screenshot README-preview](${data.image})
+![Screenshot README-preview]()
+
+![Image](./images/${data.images})
 
 ## Credits
 
@@ -38,8 +40,9 @@ ${data.credits}
 
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+${licenseBadge.badgeType(data.license)}
 
+Click on the license badge to get more info about the license
 
 ## How to Contribute
 
@@ -57,31 +60,65 @@ inquirer.prompt([
         type:'input',
         name:'title',
         message:'What is the Title of the Project?',
+        validate: titleInput => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log('Please enter your title!');
+                return false;
+            }
+        }
     },
     {
         type:'input',
         name:'description',
         message:'What is the Description of the Project?',
+        validate: decrptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please enter your description!');
+                return false;
+            }
+        }
     },
     {
         type:'input',
         name:'installation',
-        message:'How is the Installation',
+        message:'Provide installation instrucctions for the Project',
     },
     {
         type:'input',
         name:'usage',
-        message:'What is the Usage of the Project?',
+        message:'Provide examples for use',
+    },
+    {
+        type: 'confirm',
+        name: 'confirmImage',
+        message: 'Do you want to add an image?',
+        default: true
     },
     {
         type:'input',
         name:'image',
-        message:'Add an image?',
+        message:'Add the image path',
     },
     {
         type:'input',
         name:'credits',
         message:'What are the Credits of the Project?',
+    },
+    {
+        type: 'confirm',
+        name: 'confirmLicense',
+        message: 'Did you use a license?',
+        default: true
+    },
+    {
+        type:'list',
+        name:'license',
+        message:'Which license do you use for this project?',
+        choices:['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla', 'MIT', 'Apache']
     },
     {
         type:'input',
@@ -96,6 +133,8 @@ inquirer.prompt([
 ]) 
 .then((data)=>{
     const createReadme = generateMarkdown(data);
+    console.log(createReadme);
 
-    fs.writeFile('README.md', createReadme, (err) => err ? console.error(err) : console.log('Successfully created README.md file!'))
+    fs.writeFile('README.md', createReadme, (err) => 
+    err ? console.error(err) : console.log('Successfully created README.md file!'))
 });
