@@ -1,9 +1,9 @@
 
-# dddd
+# ttttt
 
 ## Description
 
-sss
+tttt
 
 ## Table of Contents
 
@@ -17,33 +17,32 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-undefined
+rrrr
 
 ## Usage
 
-undefined
+rrrr
 
 ## Images
 
-![Screenshot README-preview]()
-undefined
+![Image](./images/imagen.jpg)
 
 ## Credits
 
-undefined
+ddd
 
 ## License
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Click on the license badge to get more info about the license
 
 ## How to Contribute
 
-undefined
+e
 
 ## Tests
 
-undefined
+e
 
     

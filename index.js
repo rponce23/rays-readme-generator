@@ -30,9 +30,7 @@ ${data.usage}
 
 ## Images
 
-![Screenshot README-preview]()
-
-![Image](./images/${data.images})
+![Image](./images/${data.image}.jpg)
 
 ## Credits
 
@@ -73,7 +71,7 @@ inquirer.prompt([
         type:'input',
         name:'description',
         message:'What is the Description of the Project?',
-        validate: decrptionInput => {
+        validate: descriptionInput => {
             if (descriptionInput) {
                 return true;
             } else {
@@ -101,7 +99,7 @@ inquirer.prompt([
     {
         type:'input',
         name:'image',
-        message:'Add the image path',
+        message:'Add the image name only (images should be stored in images folder)',
     },
     {
         type:'input',
