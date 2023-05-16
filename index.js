@@ -50,6 +50,14 @@ ${data.contribute}
 
 ${data.test}
 
+## Github link
+
+[Github](${data.github})
+
+## Email
+
+[rponce@mac.com](mailto:${data.email})
+
     `;
 }
 
@@ -121,12 +129,22 @@ inquirer.prompt([
     {
         type:'input',
         name:'contribute',
-        message:'Any Contributors?',
+        message:'List the contributors on this project',
     },
     {
         type:'input',
         name:'test',
-        message:'Any Tests?',
+        message:'Did you run any Test?',
+    },
+    {
+        type:'input',
+        name:'github',
+        message:'Please add your Github Link'
+    },
+    {
+        type:'input',
+        name:'email',
+        message:'Please add your Email'
     },
 ]) 
 .then((data)=>{
