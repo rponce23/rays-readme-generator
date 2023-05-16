@@ -1,9 +1,9 @@
 
-# rrrr
+# ffff
 
 ## Description
 
-eeee
+gggg
 
 ## Table of Contents
 
@@ -17,11 +17,11 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-rrrrr
+gggg
 
 ## Usage
 
-eeeee
+tttt
 
 ## Images
 
@@ -29,28 +29,29 @@ eeeee
 
 ## Credits
 
-sss
+dddd
 
 ## License
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 Click on the license badge to get more info about the license
 
 ## How to Contribute
 
-ddd
+dddd
 
 ## Tests
 
-sss
+dddd
 
-## Github link
+## Questions
+For further questiosn about this project please refer to my Github:
 
 [Github](https://github.com/rponce23/rays-readme-generator)
 
-## Email
+or you can send me an email:
 
-[rponce@mac.com](mailto:rponce@hhh.com)
+[rponce@mac.com](mailto:rponce@mac.com)
 
     

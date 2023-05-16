@@ -50,11 +50,12 @@ ${data.contribute}
 
 ${data.test}
 
-## Github link
+## Questions
+For further questiosn about this project please refer to my Github:
 
 [Github](${data.github})
 
-## Email
+or you can send me an email:
 
 [rponce@mac.com](mailto:${data.email})
 
